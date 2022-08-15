@@ -73,6 +73,7 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
+    <SlideLayout.Statement>Centered text</SlideLayout.Statement>
     <SlideLayout.Quote
       quote={'"I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play.I simply do not distinguish between work and play.I simply do not distinguish between work and play."'}
       quoteSize="54px"
@@ -83,10 +84,10 @@ const Presentation = () => (
       factInformation="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
     >
     </SlideLayout.BigFact>
-    <SlideLayout.HeaderSection
+    <SlideLayout.Section
     >
     Lorem ipsum dolor sit amet.
-    </SlideLayout.HeaderSection>
+    </SlideLayout.Section>
     <Slide>
       <FlexBox height="100%">
         <SpectacleLogo size={500} />

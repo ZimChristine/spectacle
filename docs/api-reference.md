@@ -374,7 +374,7 @@ A full-slide layout for if you need basic slide with nothing in your way.
 |-----------------|-----------------------|---------|
 | `...slideProps` | [Slide Props](#slide) |         |
 
-### `SlideLayout.Center`
+### `SlideLayout.Statement`
 
 A centered-content layout for if you want to display your slide content as a piece of content centered on the slide.
 

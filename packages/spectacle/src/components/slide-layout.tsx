@@ -12,9 +12,9 @@ const Full = ({ children, ...rest }: SlideProps) => (
 );
 
 /**
- * Centered layout
+ * Statement offers vertically centered layout
  */
-const Center = ({ children, ...rest }: SlideProps) => (
+const Statement = ({ children, ...rest }: SlideProps) => (
   <Slide {...rest}>
     <FlexBox justifyContent="center" alignItems="center" height="100%">
       <Box>{children}</Box>
@@ -83,9 +83,9 @@ const List = ({
 };
 
 /**
- * vertically centered Header Section 
+ * vertically centered Section 
  */
- const HeaderSection = ({ children, ...rest }: SlideProps) => (
+ const Section = ({ children, ...rest }: SlideProps) => (
   <Slide {...rest}>
     <FlexBox justifyContent="left" height="100%">
       <Heading>{children}</Heading>
@@ -135,4 +135,4 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
  * - Big fact?
  */
 
-export default { Full, Center, TwoColumn, List, HeaderSection, BigFact, Quote };
+export default { Full, Statement, TwoColumn, List, Section, BigFact, Quote };
