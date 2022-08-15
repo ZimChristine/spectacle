@@ -73,6 +73,11 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
+    <SlideLayout.Quote
+      quote={'"I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play.I simply do not distinguish between work and play.I simply do not distinguish between work and play."'}
+      quoteSize="54px"
+      attribution="Mary Oliver"
+    />
     <SlideLayout.BigFact
       fact="98%"
       factInformation="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."

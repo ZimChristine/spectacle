@@ -107,6 +107,22 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
 );
 
 /**
+ * Quote layout
+ */
+ const Quote = ({ quote, quoteSize, attribution, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteSize?: string; attribution: string}) => (
+  <Slide {...rest}>
+    <FlexBox flexDirection="column" alignItems="flex-start" height="100%">
+      <Box>
+        <Text fontSize={quoteSize ? quoteSize : "85px"}>{quote}</Text>
+      </Box>
+      <Box paddingLeft="32px">
+        <Text>{attribution}</Text>
+      </Box>    
+    </FlexBox>
+  </Slide>
+);
+
+/**
  * Layouts to consider:
  * - Image (left, right, full bleed?)
  * - Intro
@@ -116,4 +132,4 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
  * - Big fact?
  */
 
-export default { Full, Center, TwoColumn, List, HeaderSection, BigFact };
+export default { Full, Center, TwoColumn, List, HeaderSection, BigFact, Quote };
