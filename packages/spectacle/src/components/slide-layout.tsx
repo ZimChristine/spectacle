@@ -83,11 +83,22 @@ const List = ({
 };
 
 /**
- * vertically centered Header Section 
+ * Section layout with left aligned text
  */
  const Section = ({ sectionTitle, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; }) => (
   <Slide {...rest}>
     <FlexBox justifyContent="left" height="100%">
+      <Heading>{sectionTitle}</Heading>
+    </FlexBox>
+  </Slide>
+);
+
+/**
+ * Statement layout with centered text
+ */
+ const Statement = ({ sectionTitle, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; }) => (
+  <Slide {...rest}>
+    <FlexBox height="100%">
       <Heading>{sectionTitle}</Heading>
     </FlexBox>
   </Slide>
@@ -112,14 +123,14 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
 /**
  * Quote layout
  */
- const Quote = ({ quote, quoteFontSize, attribution, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteFontSize?: string; attribution: string}) => (
+ const Quote = ({ quote, quoteFontSize, attribution, attributionFontSize, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteFontSize?: string; attribution: string; attributionFontSize?: string}) => (
   <Slide {...rest}>
     <FlexBox flexDirection="column" alignItems="flex-start" height="100%">
       <Box>
         <Text fontSize={quoteFontSize ? quoteFontSize : "85px"}>{quote}</Text>
       </Box>
       <Box paddingLeft="32px">
-        <Text>{attribution}</Text>
+        <Text fontSize={attributionFontSize ? attributionFontSize : "36px"}>{attribution}</Text>
       </Box>    
     </FlexBox>
   </Slide>
@@ -136,4 +147,4 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
  * - Code Snippet (syntax highlighting)
  */
 
-export default { Full, Center, TwoColumn, List, HeaderSection, BigFact, Quote };
+export default { Full, Center, TwoColumn, List, Section, BigFact, Quote, Statement };

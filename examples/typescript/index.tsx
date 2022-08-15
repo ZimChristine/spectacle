@@ -74,16 +74,20 @@ const SlideFragments = () => (
 const Presentation = () => (
   <Deck theme={theme} template={template}>
     <SlideLayout.Quote
-      quote={'"I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play.I simply do not distinguish between work and play.I simply do not distinguish between work and play."'}
-      quoteFontSize="54px"
-      attribution="Mary Oliver"
+      quote={'"Notable Quote"'}
+      quoteFontSize="100px"
+      attribution="Attribution"
+      attributionFontSize="48px"
     />
     <SlideLayout.BigFact
-      fact="98%"
-      factInformation="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+      fact="100%"
+      factInformation="Fact information"
     />
     <SlideLayout.Section
-      sectionTitle="Lorem ipsum dolor sit amet."
+      sectionTitle="Section Title"
+    />
+    <SlideLayout.Statement
+      sectionTitle="Statement"
     />
     <Slide>
       <FlexBox height="100%">
