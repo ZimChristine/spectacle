@@ -73,7 +73,6 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
-    <SlideLayout.Statement>Centered text</SlideLayout.Statement>
     <SlideLayout.Quote
       quote={'"I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play. I simply do not distinguish between work and play.I simply do not distinguish between work and play.I simply do not distinguish between work and play."'}
       quoteFontSize="54px"

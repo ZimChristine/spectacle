@@ -27,11 +27,11 @@ describe('SlideLayout', () => {
     expect(getByText('Hey world')).toBeDefined();
   });
 
-  it('SlideLayout.Statement should render children content in a centered flex element', () => {
+  it('SlideLayout.Center should render children content in a centered flex element', () => {
     const { getByText } = renderInDeck(
-      <SlideLayout.Statement>
+      <SlideLayout.Center>
         <Heading>Hey world</Heading>
-      </SlideLayout.Statement>
+      </SlideLayout.Center>
     );
 
     expect(getByText('Hey world')?.parentElement?.parentElement).toHaveStyle({
