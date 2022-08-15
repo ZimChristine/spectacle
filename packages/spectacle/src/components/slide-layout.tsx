@@ -85,10 +85,10 @@ const List = ({
 /**
  * vertically centered Section 
  */
- const Section = ({ children, ...rest }: SlideProps) => (
+ const Section = ({ sectionTitle, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; }) => (
   <Slide {...rest}>
     <FlexBox justifyContent="left" height="100%">
-      <Heading>{children}</Heading>
+      <Heading>{sectionTitle}</Heading>
     </FlexBox>
   </Slide>
 );
@@ -112,11 +112,11 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
 /**
  * Quote layout
  */
- const Quote = ({ quote, quoteSize, attribution, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteSize?: string; attribution: string}) => (
+ const Quote = ({ quote, quoteFontSize, attribution, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteFontSize?: string; attribution: string}) => (
   <Slide {...rest}>
     <FlexBox flexDirection="column" alignItems="flex-start" height="100%">
       <Box>
-        <Text fontSize={quoteSize ? quoteSize : "85px"}>{quote}</Text>
+        <Text fontSize={quoteFontSize ? quoteFontSize : "85px"}>{quote}</Text>
       </Box>
       <Box paddingLeft="32px">
         <Text>{attribution}</Text>
@@ -133,6 +133,7 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
  * - Section
  * - Statement?
  * - Big fact?
+ * - Code Snippet (syntax highlighting)
  */
 
 export default { Full, Statement, TwoColumn, List, Section, BigFact, Quote };
