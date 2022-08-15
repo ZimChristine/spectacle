@@ -1,7 +1,7 @@
 import Slide, { SlideProps } from './slide/slide';
 import { Box, FlexBox } from './layout-primitives';
 import { ComponentProps, Fragment, ReactNode } from 'react';
-import { Heading, ListItem, OrderedList, UnorderedList } from './typography';
+import { Heading, Text, ListItem, OrderedList, UnorderedList } from './typography';
 import { Appear } from './appear';
 
 /**
@@ -93,6 +93,19 @@ const List = ({
   </Slide>
 );
 
+const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'> & {fact: string; factInformation?: string}) => (
+  <Slide {...rest}>
+    <FlexBox>
+      <Box>
+        <Text fontSize="250px" textAlign="center">{fact}</Text>
+          {factInformation ? 
+          <Text textAlign="center">{factInformation}</Text>
+          : null}
+      </Box>
+    </FlexBox>
+  </Slide>
+);
+
 /**
  * Layouts to consider:
  * - Image (left, right, full bleed?)
@@ -103,4 +116,4 @@ const List = ({
  * - Big fact?
  */
 
-export default { Full, Center, TwoColumn, List, HeaderSection };
+export default { Full, Center, TwoColumn, List, HeaderSection, BigFact };

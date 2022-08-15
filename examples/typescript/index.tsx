@@ -73,6 +73,11 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
+    <SlideLayout.BigFact
+      fact="98%"
+      factInformation="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+    >
+    </SlideLayout.BigFact>
     <SlideLayout.HeaderSection
     >
     Lorem ipsum dolor sit amet.
