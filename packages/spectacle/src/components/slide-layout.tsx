@@ -83,6 +83,17 @@ const List = ({
 };
 
 /**
+ * vertically centered Header Section 
+ */
+ const HeaderSection = ({ children, ...rest }: SlideProps) => (
+  <Slide {...rest}>
+    <FlexBox justifyContent="left" height="100%">
+      <Heading>{children}</Heading>
+    </FlexBox>
+  </Slide>
+);
+
+/**
  * Layouts to consider:
  * - Image (left, right, full bleed?)
  * - Intro
@@ -92,4 +103,4 @@ const List = ({
  * - Big fact?
  */
 
-export default { Full, Center, TwoColumn, List };
+export default { Full, Center, TwoColumn, List, HeaderSection };

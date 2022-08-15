@@ -73,6 +73,10 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
+    <SlideLayout.HeaderSection
+    >
+    Lorem ipsum dolor sit amet.
+    </SlideLayout.HeaderSection>
     <Slide>
       <FlexBox height="100%">
         <SpectacleLogo size={500} />
