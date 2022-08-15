@@ -93,6 +93,9 @@ const List = ({
   </Slide>
 );
 
+/**
+ * Big Fact with optional fact information
+ */
 const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'> & {fact: string; factInformation?: string}) => (
   <Slide {...rest}>
     <FlexBox>
