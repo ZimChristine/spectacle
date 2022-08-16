@@ -85,10 +85,10 @@ const List = ({
 /**
  * Section layout with left aligned text
  */
- const Section = ({ sectionTitle, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; }) => (
+ const Section = ({ sectionTitle, sectionTitleProps, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; sectionTitleProps?: ComponentProps<typeof Heading>; }) => (
   <Slide {...rest}>
-    <FlexBox justifyContent="left" height="100%">
-      <Heading>{sectionTitle}</Heading>
+    <FlexBox justifyContent="flex-start" height="100%">
+      <Heading {...sectionTitleProps}>{sectionTitle}</Heading>
     </FlexBox>
   </Slide>
 );
@@ -96,10 +96,10 @@ const List = ({
 /**
  * Statement layout with centered text
  */
- const Statement = ({ sectionTitle, ...rest }: Omit<SlideProps, 'children'> & { sectionTitle: string; }) => (
+ const Statement = ({ statement, statementProps, ...rest }: Omit<SlideProps, 'children'> & { statement: string; statementProps?: ComponentProps<typeof Heading>;}) => (
   <Slide {...rest}>
     <FlexBox height="100%">
-      <Heading>{sectionTitle}</Heading>
+      <Heading {...statementProps}>{statement}</Heading>
     </FlexBox>
   </Slide>
 );
@@ -107,13 +107,13 @@ const List = ({
 /**
  * Big Fact with optional fact information
  */
-const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'> & {fact: string; factInformation?: string}) => (
+const BigFact = ({ fact, factInformation, factProps, factInformationProps, ...rest }: Omit<SlideProps, 'children'> & {fact: string; factInformation?: string; factProps?: ComponentProps<typeof Text>; factInformationProps?: ComponentProps<typeof Text>;}) => (
   <Slide {...rest}>
     <FlexBox>
       <Box>
-        <Text fontSize="250px" textAlign="center">{fact}</Text>
+        <Text fontSize="250px" textAlign="center" {...factProps}>{fact}</Text>
           {factInformation ? 
-          <Text textAlign="center">{factInformation}</Text>
+          <Text textAlign="center" {...factInformationProps}>{factInformation}</Text>
           : null}
       </Box>
     </FlexBox>
@@ -123,16 +123,12 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
 /**
  * Quote layout
  */
- const Quote = ({ quote, quoteFontSize, attribution, attributionFontSize, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteFontSize?: string; attribution: string; attributionFontSize?: string}) => (
+ const Quote = ({ quote, quoteProps, attribution, attributionProps, ...rest }: Omit<SlideProps, 'children'> & {quote: string; quoteProps?: ComponentProps<typeof Text>; attribution: string; attributionProps?: ComponentProps<typeof Text>}) => (
   <Slide {...rest}>
-    <FlexBox flexDirection="column" alignItems="flex-start" height="100%">
-      <Box>
-        <Text fontSize={quoteFontSize ? quoteFontSize : "85px"}>{quote}</Text>
-      </Box>
-      <Box paddingLeft="32px">
-        <Text fontSize={attributionFontSize ? attributionFontSize : "36px"}>{attribution}</Text>
-      </Box>    
-    </FlexBox>
+    <Box width="100%" margin="auto">
+        <Text fontSize="85px" {...quoteProps}>{quote}</Text>
+        <Text fontSize="36px" padding={'0em 0em 0em 1em'} {...attributionProps}>{attribution}</Text>
+    </Box>
   </Slide>
 );
 
@@ -140,10 +136,6 @@ const BigFact = ({ fact, factInformation, ...rest }: Omit<SlideProps, 'children'
  * Layouts to consider:
  * - Image (left, right, full bleed?)
  * - Intro
- * - Quote
- * - Section
- * - Statement?
- * - Big fact?
  * - Code Snippet (syntax highlighting)
  */
 
