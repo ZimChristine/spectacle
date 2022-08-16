@@ -73,22 +73,6 @@ const SlideFragments = () => (
 
 const Presentation = () => (
   <Deck theme={theme} template={template}>
-    <SlideLayout.Quote
-      quote={'"Notable Quote"'}
-      quoteFontSize="100px"
-      attribution="Attribution"
-      attributionFontSize="48px"
-    />
-    <SlideLayout.BigFact
-      fact="100%"
-      factInformation="Fact information"
-    />
-    <SlideLayout.Section
-      sectionTitle="Section Title"
-    />
-    <SlideLayout.Statement
-      sectionTitle="Statement"
-    />
     <Slide>
       <FlexBox height="100%">
         <SpectacleLogo size={500} />
